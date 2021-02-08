@@ -1,0 +1,23 @@
+from tkinter import * 
+
+win =  Tk()
+win.geometry('300x300')
+win.title('Chat App')
+
+sm_var = StringVar()
+
+def SendMessage():
+    sm = sm_var.get()
+    sm_var.set('')
+    l1 = ['', ' ', '  ']
+    if sm in l1:
+        print('Invalid statement')
+
+    elif sm not in l1  :
+        l2 = Label(win, text = sm).pack()
+
+
+ent1 = Entry(win, textvariable = sm_var).pack(side = BOTTOM)
+b1 = Button(win,  text = 'send', command = SendMessage).pack(side = BOTTOM)
+
+win.mainloop()
